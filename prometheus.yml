@@ -1,0 +1,11 @@
+global:
+  scrape_interval: 5s
+  external_labels:
+    monitor: 'node'
+scrape_configs:
+  - job_name: 'prometheus'
+    static_configs:
+      - targets: ['YOURIP:9090'] ## IP Address of the localhost. Match the port to your container port
+  - job_name: 'trend'
+    static_configs:
+      - targets: ['YOURIP:9400']
