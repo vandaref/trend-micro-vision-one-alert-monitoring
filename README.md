@@ -1,6 +1,8 @@
-# Alerts Monitoring Trend Micro Vision One with API, Prometheus and Grafana
+# Alerts Monitoring : Trend Micro Vision One with API, Prometheus and Grafana
 
-Alerts Monitoring Trend Micro Vision One with API, Prometheus and Grafana sert à obtenir certaines metrics exploitables concernant les events de l'XDR Trend comme le nombre d'events total sur une durée choisie, le lien de l'event, la sevérité, etc. Il est possible par la suite de les intégrer à un outil de monitoring tel que Grafana. 
+Alerts Monitoring : Trend Micro Vision One with API, Prometheus and Grafana sert à obtenir certaines metrics exploitables concernant les events de l'XDR Trend comme le nombre d'events total sur une durée choisie, le lien de l'event, la sevérité, etc. Il est possible par la suite de les intégrer à un outil de monitoring tel que Grafana. 
+
+![](https://github.com/vandaref/trend-micro-vision-one-alert-monitoring/blob/main/grafana_dashboard.PNG)
 
 C'est un projet qui comporte :
   - un script python servant d'exporter et de colleteur Prometheus 
@@ -44,6 +46,15 @@ python api_v1.0
 ```
 
 Pour observer les résultats il faut se rendre à l'adresse : http://YOURIP:9400 
+
+## Documentation
+[Guide API Trend](https://automation.trendmicro.com/xdr/Guides/First-Steps-Toward-Using-the-APIs)
+
+[API utilisée](https://automation.trendmicro.com/xdr/api-beta)
+
+[Cacher une colonne sur Grafana](https://community.grafana.com/t/hide-column-in-table-in-v8-0/49040/7)
+
+[Faire un exporter Prometheus en Python](https://www.dadall.info/article643/comment-prendre-un-peu-de-python-pour-faire-un-exporter-prometheus)
 
 ## Contribution
 
