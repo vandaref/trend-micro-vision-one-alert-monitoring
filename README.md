@@ -1,4 +1,4 @@
-# Alerts events Trend Micro Vision One
+# Alerts Monitoring Trend Micro Vision One
 
 Alerts events Trend sert à obtenir certaines metrics exploitables concernant les events de l'XDR Trend comme le nombre d'events total sur une durée chosie, le lien de l'event, la sevérité, etc. Il est possible par la suite de les intégrer à un outil de monitoring tel que Grafana. 
 
