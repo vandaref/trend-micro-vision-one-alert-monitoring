@@ -51,4 +51,4 @@ Toutes les contributions sont les bienvenues.
 
 ## License
 
-[MIT](httpschoosealicense.comlicensesmit)
+[MIT](https://choosealicense.com/licenses/mit/)
