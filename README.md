@@ -16,8 +16,13 @@ Installer [Python](https://apps.microsoft.com/store/detail/python-310/9PJPW5LDXL
 Installer [Docker Desktop](https://www.docker.com/products/docker-desktop/).
 
 Dans Docker Desktop il faut :
-  - un container [Prometheus](https://prometheus.io/)
-  - (un container [Grafana](https://grafana.com/))
+  - un container [Prometheus](https://prometheus.io/) (v2.29.2)
+  - un container [Grafana](https://grafana.com/) (latest version)
+
+```
+docker run -d -p 9090:9090 --name prometheus -v /VOTRECHEMIN/prometheus.yml:/etc/prometheus/prometheus.yml prom/prometheus:v2.29.2
+docker run -d -p 3000:3000 --name grafana grafana/grafana:latest
+```
 
 ## Installation
 
@@ -26,26 +31,34 @@ Commencer par installer les libraires et les modules nécessaires.
 ```bash
 pip install -r requirements.txt
 ```
-Il faut également modifier le token dans le fichier **config.py** et mettre votre token Trend (droits admin nécessaires).
+Il faut modifier le token dans le fichier **config.py** et mettre votre token Trend (droits admin nécessaires).
 
 `token = 'YOURTOKEN'`
 
-Modifier le fichier de config **prometheus.yml** afin de renseigner votre **IP** dans les jobs. 
+Modifier également le fichier de config **prometheus.yml** (/VOTRECHEMIN/prometheus.yml) afin de renseigner votre **IP** dans les jobs. 
 
 ```
-- job_name: 'trend'
+global:
+  scrape_interval: 5s
+  external_labels:
+    monitor: 'node'
+scrape_configs:
+  - job_name: 'prometheus'
+    static_configs:
+      - targets: ['YOURIP:9090'] ## IP Address of the localhost. Match the port to your container port
+  - job_name: 'trend'
     static_configs:
       - targets: ['YOURIP:9400']
 ```
 
 ## Usage
-Lancer le container Prometheus (et le container Grafana) via Docker Desktop puis lancer le script python **api_v1.0** dans une console Windows.
+Lancer le container Prometheus et le container Grafana via Docker Desktop puis lancer le script python **api_v1.0** dans une console Windows.
 
 ```python
 python api_v1.0
 ```
 
-Pour observer les résultats il faut se rendre à l'adresse : http://YOURIP:9400 
+Pour observer les métrics il faut se rendre à l'adresse : http://YOURIP:9400 et pour créer votre dashboard il faut se rendre sur : http://YOURIP:3000
 
 ## Documentation
 [Guide API Trend](https://automation.trendmicro.com/xdr/Guides/First-Steps-Toward-Using-the-APIs)
