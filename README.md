@@ -1,6 +1,6 @@
 # Alerts Monitoring Trend Micro Vision One with API, Prometheus and Grafana
 
-Alerts Monitoring Trend Micro Vision One with API, Prometheus and Grafana sert à obtenir certaines metrics exploitables concernant les events de l'XDR Trend comme le nombre d'events total sur une durée chosie, le lien de l'event, la sevérité, etc. Il est possible par la suite de les intégrer à un outil de monitoring tel que Grafana. 
+Alerts Monitoring Trend Micro Vision One with API, Prometheus and Grafana sert à obtenir certaines metrics exploitables concernant les events de l'XDR Trend comme le nombre d'events total sur une durée choisie, le lien de l'event, la sevérité, etc. Il est possible par la suite de les intégrer à un outil de monitoring tel que Grafana. 
 
 C'est un projet qui comporte :
   - un script python servant d'exporter et de colleteur Prometheus 
