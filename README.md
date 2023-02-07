@@ -11,7 +11,7 @@ C'est un projet qui comporte :
   - les requirements
 
 ## Prérequis
-Installer [Python](https://apps.microsoft.com/store/detail/python-310/9PJPW5LDXLZ5) ici 3.10.
+Installer [Python](https://apps.microsoft.com/store/detail/python-310/9PJPW5LDXLZ5) (3.10).
 
 Installer [Docker Desktop](https://www.docker.com/products/docker-desktop/).
 
