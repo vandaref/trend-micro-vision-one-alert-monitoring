@@ -58,7 +58,11 @@ Lancer le container Prometheus et le container Grafana via Docker Desktop puis l
 python api_v1.0
 ```
 
-Pour observer les métrics il faut se rendre à l'adresse : http://YOURIP:9400 et pour créer votre dashboard il faut se rendre sur : http://YOURIP:3000
+Pour observer les métrics il faut se rendre à l'adresse : [](http://YOURIP:9400).
+
+Pour créer votre dashboard il faut se rendre sur : http://YOURIP:3000 .
+
+Sur Grafana, renseigner la data source Prometheus avec l'adresse que vous avez attribuée (http://YOURIP:9090). 
 
 ## Documentation
 [Guide API Trend](https://automation.trendmicro.com/xdr/Guides/First-Steps-Toward-Using-the-APIs)
