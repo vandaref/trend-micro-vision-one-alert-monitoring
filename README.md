@@ -73,6 +73,6 @@ Pour observer les métrics il faut se rendre à l'adresse : http://YOURIP:9400 e
 
 Toutes les contributions sont les bienvenues.
 
-## License
+## Licence
 
 [MIT](https://choosealicense.com/licenses/mit/)
