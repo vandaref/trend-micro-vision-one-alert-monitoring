@@ -55,7 +55,7 @@ scrape_configs:
 Lancer le container Prometheus et le container Grafana via Docker Desktop puis lancer le script python **api_v1.0** dans une console Windows.
 
 ```python
-python api_v1.0
+python api_v1.0.py
 ```
 
 Pour observer les métrics il faut se rendre à l'adresse : http://YOURIP:9400.
