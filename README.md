@@ -15,15 +15,18 @@ Installer [Python](https://apps.microsoft.com/store/detail/python-310/9PJPW5LDXL
 
 Installer [Docker Desktop](https://www.docker.com/products/docker-desktop/).
 
+Créer un fichier **prometheus.yml** vide ou récupérer celui du projet.
+
 Dans Docker Desktop il faut :
   - un container [Prometheus](https://prometheus.io/) (v2.29.2)
   - un container [Grafana](https://grafana.com/) (latest version)
 
+Dans **Windows PowerShell** :
 ```
 docker run -d -p 9090:9090 --name prometheus -v /VOTRECHEMIN/prometheus.yml:/etc/prometheus/prometheus.yml prom/prometheus:v2.29.2
 docker run -d -p 3000:3000 --name grafana grafana/grafana:latest
 ```
-
+![](https://github.com/vandaref/trend-micro-vision-one-alert-monitoring/blob/main/docker_desktop.PNG)
 ## Installation
 
 Commencer par installer les libraires et les modules nécessaires.
@@ -52,7 +55,7 @@ scrape_configs:
 ```
 
 ## Usage
-Lancer le container Prometheus et le container Grafana via Docker Desktop puis lancer le script python **api_v1.0** dans une console Windows.
+Lancer le container Prometheus et le container Grafana via Docker Desktop puis lancer le script python **api.py** dans une console Windows.
 
 ```python
 python api.py
