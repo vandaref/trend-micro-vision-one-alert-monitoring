@@ -5,6 +5,7 @@ Alerts Monitoring : Trend Micro Vision One with API, Prometheus and Grafana sert
 ![](https://github.com/vandaref/trend-micro-vision-one-alert-monitoring/blob/main/grafana_dashboard.PNG)
 
 C'est un projet qui comporte :
+  - un dockerfile pour faciliter l'installation
   - un script python servant d'exporter et de colleteur Prometheus 
   - un fichier de config qui contient le token
   - un fichier de config prometheus.yml 
@@ -21,19 +22,28 @@ Dans Docker Desktop il faut :
   - un container [Prometheus](https://prometheus.io/) (v2.29.2)
   - un container [Grafana](https://grafana.com/) (latest version)
 
-Dans **Windows PowerShell** :
+Dans **Windows PowerShell** (ou autre console) :
 ```
 docker run -d -p 9090:9090 --name prometheus -v /VOTRECHEMIN/prometheus.yml:/etc/prometheus/prometheus.yml prom/prometheus:v2.29.2
 docker run -d -p 3000:3000 --name grafana grafana/grafana:latest
 ```
 ![](https://github.com/vandaref/trend-micro-vision-one-alert-monitoring/blob/main/docker_desktop.PNG)
-## Installation
+## Installation 
+Dans **Windows PowerShell** (ou autre console), se rendre dans le répertoire du projet :
+```
+docker build -t visionone:1.0 .
+docker images 
+docker run -p 9400:9400 [IMAGEID]
+```
 
-Commencer par installer les libraires et les modules nécessaires.
+## Installation alternative
+Installer les libraires et les modules nécessaires.
 
 ```bash
 pip install -r REQUIREMENTS.txt
 ```
+
+## Mise en place
 Il faut modifier le token dans le fichier **config.py** et mettre votre token Trend (droits admin nécessaires).
 
 `token = 'YOURTOKEN'`
@@ -53,15 +63,20 @@ scrape_configs:
     static_configs:
       - targets: ['YOURIP:9400']
 ```
+## Usage 
+Lancer le container Prometheus et le container Grafana via Docker Desktop (le docker **visionone** étant déjà lancé).
 
-## Usage
-Lancer le container Prometheus et le container Grafana via Docker Desktop puis lancer le script python **api.py** dans une console Windows.
+## Usage alternatif
+Lancer le container Prometheus et le container Grafana via Docker Desktop puis lancer le script python **api.py** dans une console Windows (ou autre console).
 
 ```python
 python api.py
 ```
 
+## Et ensuite ?
 Pour observer les métrics il faut se rendre à l'adresse : http://YOURIP:9400.
+
+Pour aller sur Prometheus il faut se rendre à l'adresse : http://YOURIP:9090.
 
 Pour créer votre dashboard il faut se rendre sur : http://YOURIP:3000.
 
