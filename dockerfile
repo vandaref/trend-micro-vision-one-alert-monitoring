@@ -34,5 +34,5 @@ EXPOSE 9400
 ENV TZ="Europe/Paris"
 ENV PATH="/opt/venv/bin:$PATH"
 
-CMD [ "api_v1.0.py" ]
+CMD [ "api.py" ]
 ENTRYPOINT [ "python" ]
