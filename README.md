@@ -49,7 +49,7 @@ scrape_configs:
   - job_name: 'prometheus'
     static_configs:
       - targets: ['YOURIP:9090'] ## IP Address of the localhost. Match the port to your container port
-  - job_name: 'trend'
+  - job_name: 'vision_one'
     static_configs:
       - targets: ['YOURIP:9400']
 ```
