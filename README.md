@@ -32,7 +32,7 @@ docker run -d -p 3000:3000 --name grafana grafana/grafana:latest
 Commencer par installer les libraires et les modules nécessaires.
 
 ```bash
-pip install -r requirements.txt
+pip install -r REQUIREMENTS.txt
 ```
 Il faut modifier le token dans le fichier **config.py** et mettre votre token Trend (droits admin nécessaires).
 
