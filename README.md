@@ -107,6 +107,9 @@ Sur Grafana, renseigner la data source Prometheus avec l'adresse que vous avez a
 
 [Faire un exporter Prometheus en Python](https://www.dadall.info/article643/comment-prendre-un-peu-de-python-pour-faire-un-exporter-prometheus)
 
+[Windows variable environnement](https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_environment_variables?view=powershell-7.3)
+
+[Python variable environnement](https://www.twilio.com/fr/blog/variables-environnement-python)
 ## Contribution
 
 Toutes les contributions sont les bienvenues.
