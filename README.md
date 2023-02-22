@@ -80,7 +80,7 @@ docker run -p 9400:9400 --name trend -e token='VOTRETOKEN' [IMAGEID]
 Sinon l'usage alternatif fonctionne de la même façon.
 
 ## Usage 
-Lancer le container Prometheus, le container Grafana et le docker **trend** via Docker Desktop (ils sont normalement déjà lancés).
+Lancer le container Prometheus, le container Grafana et le container trend via Docker Desktop (ils sont normalement déjà lancés).
 
 ## Usage alternatif
 Les containers Prometheus et Grafana sont normalement déjà lancés. Alors il suffit de lancer le script python **api.py** dans une console Windows (ou autre console).
