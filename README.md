@@ -31,9 +31,9 @@ docker run -d -p 3000:3000 --name grafana grafana/grafana:latest
 ## Installation 
 Dans **Windows PowerShell** (ou autre console), se rendre dans le répertoire du projet :
 ```
-docker build -t visionone:1.0 .
+docker build -t trendmicro:1.0 .
 docker images 
-docker run -p 9400:9400 [IMAGEID]
+docker run -p 9400:9400 --name trend [IMAGEID]
 ```
 
 ## Installation alternative
@@ -63,8 +63,25 @@ scrape_configs:
     static_configs:
       - targets: ['YOURIP:9400']
 ```
+## Token : variable d'environnement
+Il y a la possibilité de passer le token en variable d'environnement avec la commande :`$Env:token='VOTRETOKEN'` dans un PowerShell (laisser la fenêtre ouverte).
+
+Il faut alors modifier le fichier **config.py** comme suit :
+```
+import os
+token = os.environ['token']
+print (token)
+```
+
+Il est parfois nécessaire d'ajouter le paramètre -e (export) pour lancer le container : 
+
+```
+docker run -p 9400:9400 --name trend -e token='VOTRETOKEN' [IMAGEID]
+```
+Sinon l'usage alternatif fonctionne de la même façon.
+
 ## Usage 
-Lancer le container Prometheus et le container Grafana via Docker Desktop (le docker **visionone** étant déjà lancé).
+Lancer le container Prometheus et le container Grafana via Docker Desktop (le docker **trend** étant déjà lancé).
 
 ## Usage alternatif
 Lancer le container Prometheus et le container Grafana via Docker Desktop puis lancer le script python **api.py** dans une console Windows (ou autre console).
