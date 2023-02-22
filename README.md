@@ -64,14 +64,13 @@ scrape_configs:
       - targets: ['YOURIP:9400']
 ```
 ## Token : variable d'environnement
-Il y a la possibilité de passer le token en variable d'environnement avec la commande :`$Env:token='VOTRETOKEN'` dans un PowerShell (laisser la fenêtre ouverte).
+Il y a la possibilité de passer le token en variable d'environnement dans **Windows PowerShell** (laisser la fenêtre ouverte) :
+```
+$Env:token='VOTRETOKEN'
+``` 
 
-Il faut alors modifier le fichier **config.py** comme suit :
-```
-import os
-token = os.environ['token']
-print (token)
-```
+Il faut alors renommer le fichier **config_token_env.py** en **config.py**.
+
 
 Il est parfois nécessaire d'ajouter le paramètre -e (export) pour lancer le container : 
 
